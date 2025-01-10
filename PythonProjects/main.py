@@ -11,7 +11,7 @@ body_create = {
 
 body_change_name = {
     "pokemon_id": "188009",
-    "name": "Огонек",
+    "name": "Олег",
     "photo_id": -1
 }
 
@@ -23,3 +23,10 @@ print(pokemon_id)
 
 response_change_name = requests.put(url = f'{URL}/pokemons', headers = HEADER, json = body_change_name)
 print(response_change_name.text)
+
+body_add_pokeball = {
+    "pokemon_id": pokemon_id
+}
+
+response_add_pokeball = requests.post(url = f'{URL}/trainers/add_pokeball', headers = HEADER, json = body_add_pokeball)
+print(response_add_pokeball.text)
